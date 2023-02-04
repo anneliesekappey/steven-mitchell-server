@@ -12,6 +12,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+import DatingProfile from './models/DatingProfile.model.js'
+
 app.post('/datingprofile', async (req, res) => {
   const { body } = req
   try {
