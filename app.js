@@ -26,8 +26,8 @@ app.post('/datingprofile', async (req, res) => {
 
 app.get('/datingprofile', async (req, res) => {
   try {
-    const datingProfiles = await DatingProfile.find()
-    res.status(200).json(datingProfiles)
+    const datingprofiles = await DatingProfile.find()
+    res.status(200).json(datingprofiles)
   } catch (error) {
     res.status(500).json({ status: 500, msg: error.message })
   }
@@ -36,9 +36,9 @@ app.get('/datingprofile', async (req, res) => {
 app.get('/datingprofile/:id', async (req, res) => {
   const { id } = req.params
   try {
-    const datingProfile = await DatingProfile.findById(id)
+    const datingprofile = await DatingProfile.findById(id)
     if (datingProfile) {
-      res.status(200).json(datingProfile)
+      res.status(200).json(datingprofile)
     } else {
       res.status(404).json({ status: 404, msg: 'Dating profile not found' })
     }
