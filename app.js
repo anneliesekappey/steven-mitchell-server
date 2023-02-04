@@ -5,8 +5,11 @@ dotenv.config()
 
 import './db/index.js'
 
+import cors from 'cors'
+
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.post('/datingprofile', async (req, res) => {
